@@ -228,7 +228,7 @@ Please note that the deployment will run into errors if the authentication doesn
 
 Still have some time?
 
-* Create a secret postgresql-secret for the password. See also [Secrets](https://docs.openshift.org/latest/dev_guide/secrets.html) for details. You can do that like this:
+* Create a secret postgresql-secret for the password. You can do that like this with the CLI:
 
 ```
 oc secret new-basicauth postgresql-secret --username=username --password=password
