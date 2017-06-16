@@ -14,8 +14,6 @@ public class DecodeVin {
     data.setVis("unknown");
     data.setYear(0);
 
-    /* reference solution is here:
-     
     // wmi is chars 1..3
     data.setWmi(vin.substring(0, 3));
 
@@ -33,7 +31,6 @@ public class DecodeVin {
     } else {
       data.setYear(0);
     }
-    */
 
     return data;
   }
