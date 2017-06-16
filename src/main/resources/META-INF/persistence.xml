@@ -9,7 +9,7 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <validation-mode>CALLBACK</validation-mode>
     <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create" />
+      <property name="hibernate.hbm2ddl.auto" value="update" />
     </properties>
   </persistence-unit>
 </persistence>
