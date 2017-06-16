@@ -34,7 +34,7 @@ Click on "Java". You should see this screen:
 
 Use the default selection "Wildfly" and version "10.1" and click select. You should see this screen:
 
-![](CreateWildflyContent.png)
+![](CreateWildflyContents.png)
 
 Enter a name, e.g. `decodevin` and the git url for cloning this repository: `https://github.com/nextstepman/decodevin.git`.
 

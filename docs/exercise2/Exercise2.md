@@ -26,7 +26,7 @@ You should see this screen:
 
 ![](PostgresOptions.png)
 
-This allows you to configure the DB you want to create. We will leave almost all defaults, but just enter a username and password.
+This allows you to configure the DB you want to create. We will leave almost all defaults, but enter the username "username" and password "password".
 
 Enter:
 
@@ -49,7 +49,7 @@ Congratulations, you just deployed a PostgreSQL DB on Openshift.
 
 In order to connect the service to the DB we will have to provide the connection parameters in Openshift in the source code. The existing source code uses a Default database of JEE - we will change that so that it uses the PostgreSQL db.
 
-We will hard code the connection properties first. 
+We will hard code the connection properties. Later (if you have time) you can do it the proper way with environment variables and secrets.  
 
 Open the file `web.xml` in the IDE:
 
@@ -170,9 +170,25 @@ You should get some result like
 
 Finished already? Try out the following things:
 
-* Replace the connection parameters in the web.xml with `${env.USERNAME}` and so forth. 
-* Set the environment Variables USERNAME in the  
-* Login to the Pod with the terminal (you find that in the Pod / Terminal) section. Kill the java process. See what happens. This is "Self Healing". 
+* Replace the username and password parameters in the web.xml with `${env.POSTGRESQL_USERNAME}` and `${env.POSTGRESQL_PASSWORD}`. 
+* Set the environment Variables `POSTGRESQL_USERNAME` and `POSTGRESQL_PASSWORD` in the Deployment Config.
+
+Still have some time?
+
+* Create a secret postgresql-secret for the password. See also [Secrets](https://docs.openshift.org/latest/dev_guide/secrets.html) for details. You can do that like this:
+
+```oc create 
+
+* Update the Deployment Config to mount the secret as variable. See this example:
+
+```
+      env:
+        - name: POSTGRESQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgresql-secret
+              key: password
+```
 
 
 
