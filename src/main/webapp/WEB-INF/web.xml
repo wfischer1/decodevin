@@ -6,7 +6,6 @@
          version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
-  <!--
   <data-source>
     <name>java:ds/imagedb</name>
     <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
@@ -16,6 +15,5 @@
     <user>username</user>
     <password>password</password>
   </data-source>
-  -->
 
 </web-app>
