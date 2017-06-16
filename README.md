@@ -12,9 +12,9 @@ See below links for specific content
 
 Exercises:
 
-1. [Get it up and running](docs/gettingstarted/GettingStarted) on Openshift
-1. [Complete the implementation](docs/exercise1/Exercise1) and redeploy
-* [Connect to PostgreSQL](docs/exercise2/Exercise2)
+1. [Get it up and running](docs/gettingstarted/GettingStarted.md) on Openshift
+2. [Complete the implementation](docs/exercise1/Exercise1.md) and redeploy
+3. [Connect to PostgreSQL](docs/exercise2/Exercise2.md)
 
 
 Have fun!
