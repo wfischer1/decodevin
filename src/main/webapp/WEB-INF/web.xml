@@ -6,28 +6,16 @@
          version="3.0">
   <display-name>Archetype Created Web Application</display-name>
 
-  <resource-ref>
-    <res-ref-name>java:global/imagedb</res-ref-name>
-    <res-type>javax.sql.DataSource</res-type>
-  </resource-ref>
-
-  <!-- to use environment variables, use ${env.VARNAME} -->
-
+  <!--
   <data-source>
-    <name>java:global/imagedb</name>
-    <class-name>org.postgresql.ds.PGConnectionPoolDataSource</class-name>
-    <url>jdbc:postgresql://localhost:5432/sampledb</url>
+    <name>java:ds/imagedb</name>
+    <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
+    <server-name>postgresql</server-name>
+    <port-number>5432</port-number>
+    <database-name>sampledb</database-name>
     <user>username</user>
     <password>password</password>
   </data-source>
-
-  <!--
-
-<data-source>
-  <name>java:global/imagedb</name>
-  <class-name>org.apache.derby.jdbc.EmbeddedDriver</class-name>
-  <url>jdbc:derby:target/imagedb;create=true</url>
-</data-source>
   -->
 
 </web-app>

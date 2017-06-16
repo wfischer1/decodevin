@@ -8,7 +8,7 @@
     <title>Decode Vin</title>
 </head>
 
-<body background="img/bmw.jpg" style="background-repeat: no-repeat;">
+<body background="bmw.jpg" style="background-repeat: no-repeat;">
 <form action="index.jsp" method="GET">
 
     <%
@@ -19,12 +19,12 @@
         }
     %>
 
-    <table>
-        <tr>
-            <h1>Enter your VIN</h1>
-            <td><input type="text" name="vin" value="<%= vin %>"></td>
-        </tr>
-    </table>
+    <h3>Enter your VIN</h3>
+    <div style="background-color: white; border: 1px solid; max-width: 1260px; min-width: 600px;">
+        <input type="text" name="vin" value="<%= vin %>" style="width: 100%;background-color: transparent; border: 0px solid;">
+    </div>
+
+    <br/>
 
     <input type="submit" value="Search">
 </form>
@@ -56,7 +56,10 @@
     }
     %>
 
-<h1> Result </h1>
+<h3 > Result </h3>
+<div style="background-color: white; border: 1px solid; max-width: 1260px; min-width: 600px;">
 <pre>
     <%= responseString %>
 </pre>
+
+</div>
