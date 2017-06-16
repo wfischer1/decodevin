@@ -14,7 +14,7 @@ public class DecodeVinTest {
   @Test
   @Ignore
   public void decodeVin() {
-    String vin = "SCAZS02A8KCX26429";
+    String vin = "WVWZZZ3BZWE689725";
 
     VehicleData data = decodeVin.decodeVin(vin);
 

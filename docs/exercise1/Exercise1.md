@@ -12,11 +12,11 @@ If you want to know more about VINs, see for example [Wikipedia](https://en.wiki
 
 If time is short, or if you just don't get it to work, you can cheat by using the prepared reference solution.
 
-There is a branch `example1_refsol` in the repository `https://github.com/nextstepman/decodevin.git`. Simply update your BuildConfig like described in Step 5 and continue with this. 
+There is a branch `example1_refsol` in the repository `https://github.com/nextstepman/decodevin.git` which contains the changes outlined in steps 1 to 4.  To cheat, update your BuildConfig like described in Step 5, but update the `ref` and change it from `master` to `example1_refsol. 
 
 ## Step 1: Download the sources
 
-First make a fork of the sources. Go to github, login (or sign up if you don't have one). 
+First make a fork of the sources. Go to github, login (or sign up if you don't have an account yet). 
 
 Open the [decodevin](https://github.com/nextstepman/decodevin) repository.
 
@@ -57,6 +57,48 @@ Build again - now the tests should fail.
 Open the class `DecodeVin`
 
 Now we will cheat a bit. There is source code commented out. Comment it in. 
+Your DecodeVin class should now look like this:
+
+```
+package com.senacor.academy.decodevin;
+
+import com.senacor.academy.decodevin.model.VehicleData;
+
+public class DecodeVin {
+
+  private static final String YEARCHARS = "ABCDEFGHJKLMNPRSTVWXY123456789";
+
+  public VehicleData decodeVin(String vin) {
+    VehicleData data = new VehicleData();
+
+    data.setWmi("unknown");
+    data.setVds("unknown");
+    data.setVis("unknown");
+    data.setYear(0);
+
+
+    // wmi is chars 1..3
+    data.setWmi(vin.substring(0, 3));
+
+    // vds is chars 4..9
+    data.setVds(vin.substring(3, 9));
+
+    // vis is chars 10..17
+    data.setVis(vin.substring(9));
+
+    char yearCode = vin.charAt(9);
+
+    int year = YEARCHARS.indexOf(yearCode);
+    if (year > 0) {
+      data.setYear(1980 + year);
+    } else {
+      data.setYear(0);
+    }
+
+    return data;
+  }
+}
+```
 
 Rerun the Test. Now it should work fine.
 
@@ -84,7 +126,7 @@ You get a screen like the following.
 
 Click "Actions / Edit YAML" like shown there.
 
-Find this section and update the git url to use yours.
+Find the section highlighted in the following screen and update the git url to use yours. You can also change the branch name here in `ref` if you didn't use `master` or you want to use the reference solution branch `example1_refsol`.
 
 ![](GitUrl.png)
 
@@ -92,7 +134,9 @@ Click `Save`. This will close the screen.
 
 Click `Start Build`
 
-Head back to the Overview and wait until the build and deployment is complete. In case of errors have a look at the build or deployment logs. 
+Head back to the Overview and wait until the build and deployment is complete. In case of errors have a look at the build or deployment logs to see what went wrong. 
+
+If in a pinch, take the reference solution in branch `example1_refsol` in the repository `https://github.com/nextstepman/decodevin.git`.
 
 ## Step 6: Verify
 

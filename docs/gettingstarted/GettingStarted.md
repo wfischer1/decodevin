@@ -60,7 +60,7 @@ Click on `Open metrics URL` and accept the certificate warnings until you see th
 
 ![](MetricsEagle.png)
 
-You can close that window with the eagle and head back to the Openshift Web Console. 
+You can close that window with the eagle and head back to the Openshift Web Console. Reload the console and the error should be gone. 
 
 The screen on the Openshift Web Console will autoupdate and you can see what happens. After a short time, Openshift will deploy the service and the screen will update to the following:
 
@@ -76,7 +76,7 @@ There is an URL at the Top of the screen.
 
 Click on it. 
 
-As there is no valid certificate, you most likely will have to accept the certificate warnings before you see the screen. 
+Maybe you get certificate warnings again. If so accept these.
 
 You should get this screen:
 
@@ -84,9 +84,9 @@ You should get this screen:
 
 This is the start screen of the deployed application server. 
 
-The microservice has a simple GUI for demonstration purposes. Use this URL to open it:
+The microservice has a simple GUI for demonstration purposes. Add the `/decode-vin/index.jsp` to the URL you just opened for the Wildfly. It should look like this:
 
-`http://<server>/decode-vin/index.jsp`
+`http://decodevin-<myname>.<ip>.xip.io/decode-vin/index.jsp`
 
 You should see this screen:
 
@@ -107,7 +107,7 @@ Next click on "Search". The microservice will show this result:
 If you prefer, you can also use the microservice directly. Just open the URL like this:
 
 `
-http://<server>/decode-vin/api/v1/vehicledata/WVWZZZ3BZWE689725
+http://decodevin-<myname>.<ip>.xip.io/decode-vin/api/v1/vehicledata/WVWZZZ3BZWE689725
 `
 
 You should get the same result like above.
@@ -121,4 +121,9 @@ Congratulations, you just build and deployed the service on Openshift.
 Finished already? Try out the following things:
 
 * Go to the Openshift Web Console and go exploring. Have a look at the BuildConfig, DeploymentConfig, Service and Route definitions. Open the YAML content.
-* Install the Openshift CLI and use the oc command to connect to Openshift
+
+And if you still have time:
+
+* Install the Openshift CLI and use the oc command to connect to Openshift with `oc login https://<server>:8443`. 
+* Go explore the contents by using commands `oc get pods`, `oc get bc` 
+* Use `oc -h` to see what other commands are there and try some.
