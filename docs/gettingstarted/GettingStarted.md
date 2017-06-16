@@ -36,7 +36,7 @@ Use the default selection "Wildfly" and version "10.1" and click select. You sho
 
 ![](CreateWildflyContents.png)
 
-Enter a name, e.g. `decodevin` and the git url for cloning this repository: `https://github.com/nextstepman/decodevin.git`.
+Enter a name, `decodevin` and the git url for cloning this repository: `https://github.com/nextstepman/decodevin.git`.
 
 This git repository is public, therefore this works without providing any credentials. 
 
@@ -44,7 +44,7 @@ Click Create. You should get a screen like this:
 
 ![](ApplicationCreated.png)
 
-Click on "Go to Overview"
+Click on "Continue to Overview"
 
 You should see a screen like the following:
 
@@ -52,7 +52,17 @@ You should see a screen like the following:
 
 It shows that the code is now compiled. You can ignore the message about missing health checks. 
 
-The screen will autoupdate and you can see what happens. After a short time, Openshift will deploy the service and the screen will update to the following:
+If you get an error `An error occurred getting metrics`, this is because of missing certificates. 
+
+![](MetricsError.png)
+
+Click on `Open metrics URL` and accept the certificate warnings until you see the Hawkular Metrics eagle like this:
+
+![](MetricsEagle.png)
+
+You can close that window with the eagle and head back to the Openshift Web Console. 
+
+The screen on the Openshift Web Console will autoupdate and you can see what happens. After a short time, Openshift will deploy the service and the screen will update to the following:
 
 ![](ApplicationDeployed.png)
 
