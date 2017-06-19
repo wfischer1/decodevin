@@ -57,7 +57,7 @@ Build again - now the tests should fail.
 Open the class `DecodeVin`
 
 Now we will cheat a bit. There is source code commented out. Comment it in. 
-Your DecodeVin class should now look like this:
+Your `DecodeVin` class should now look like this:
 
 ```
 package com.senacor.academy.decodevin;
