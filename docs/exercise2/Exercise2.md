@@ -222,9 +222,9 @@ You should get some result like
 Finished already? Try out the following things:
 
 * Replace the username and password parameters in the web.xml with `${env.POSTGRESQL_USERNAME}` and `${env.POSTGRESQL_PASSWORD}`. 
-* Set the environment Variables `POSTGRESQL_USERNAME` and `POSTGRESQL_PASSWORD` in the Deployment Config.
+* Set the environment Variables `POSTGRESQL_USERNAME` and `POSTGRESQL_PASSWORD` in the `decodevin` Deployment Config.
 
-Please note that the deployment will run into errors if the authentication doesnt't work. In that case, the Wildfly will start but the application is not deployed. See the log if the Pod if that happens, it will show errors. 
+Please note that the deployment will run into errors if the authentication doesnt't work. In that case, the Wildfly will start but the application is not deployed. See the log in the Pod if that happens, it will show errors. 
 
 Still have some time?
 
@@ -234,7 +234,7 @@ Still have some time?
 oc secret new-basicauth postgresql-secret --username=username --password=password
 ```
 
-* Update the Deployment Config to mount the secret as variable. See this example:
+* Update the Deployment Config `decodevin` to mount the secret as variable. See this example:
 
 ```
       env:
