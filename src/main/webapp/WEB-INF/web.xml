@@ -4,18 +4,16 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
-  <!--
-  <data-source>
-    <name>java:ds/imagedb</name>
-    <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
-    <server-name>postgresql</server-name>
-    <port-number>5432</port-number>
-    <database-name>sampledb</database-name>
-    <user>username</user>
-    <password>password</password>
-  </data-source>
-  -->
+    <data-source>
+        <name>java:ds/imagedb</name>
+        <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
+        <server-name>postgresql</server-name>
+        <port-number>5432</port-number>
+        <database-name>sampledb</database-name>
+        <user>username</user>
+        <password>password</password>
+    </data-source>
 
 </web-app>
